@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Adding Data  Variable -->
+
+    <data>
+        <variable
+            name="grader"
+            type="com.example.databindingapp.StudentData" />
+
+        <variable
+            name="presenter"
+            type="com.example.databindingapp.MainActivityPresenter" />
+    </data>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@={grader.student}"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@={grader.grade}"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@={grader.grade}"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
+            android:text="@string/show_data_model"
+            android:onClick="@{() -> presenter.onShowData(grader)}"
+            android:id="@+id/button"/>
+
+    </LinearLayout>
+
+
+</layout>

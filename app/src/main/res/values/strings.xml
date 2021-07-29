@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DataBindingApp</string>
+    <string name="show_data_model">Show Data Model</string>
+</resources>
